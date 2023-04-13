@@ -11,6 +11,18 @@
 // console.log(scores);
 
 const vader = require('vader-sentiment');
-const input = 'VADER is very smart, handsome, and funny';
+const input = ' I had an amazing day at the park with my family.';
 const intensity = vader.SentimentIntensityAnalyzer.polarity_scores(input);
+if(intensity.compound>0.5){
+   console.log("it as positive")
+   console.log(intensity.compound)
+}
+else if(intensity.compound<0.5){
+    console.log("it as negative")
+    console.log(intensity.compound)
+}
+else{
+    console.log("it as neutral")
+    console.log(intensity.compound)
+}
 console.log(intensity);
